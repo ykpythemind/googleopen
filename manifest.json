@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Google Opener",
+  "version": "0.3",
+  "description": "選択したテキストをcontrol+gでGoogle検索",
+  "background": {
+    "persistent": false,
+    "scripts": [ "background.js" ]
+  },
+  "content_scripts": [{
+    "matches": [ "http://*/*", "https://*/*" ],
+    "js": [ "open.js" ]
+  }],
+  "homepage_url": "https://twitter.com/ykpythemind"
+ }
