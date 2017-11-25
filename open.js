@@ -1,9 +1,13 @@
-window.addEventListener('keydown', function(e) {
-  // control + G
-  if (e.ctrlKey && e.keyCode == 71) {
-    var url = window.getSelection().toString();
-    if (url.length > 0) {
-      chrome.extension.sendMessage({text: url}, function(response){} );
+window.addEventListener(
+  'keydown',
+  e => {
+    // Control + G
+    if (e.ctrlKey && e.keyCode == 71) {
+      const url = window.getSelection().toString();
+      if (url.length > 0) {
+        chrome.extension.sendMessage({text: url}, response => {});
+      }
     }
-  }
-}, false);
+  },
+  false,
+);
